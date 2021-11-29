@@ -51,7 +51,7 @@ class App extends React.Component {
         </div>
           {thingsToDo.map(thing => {
             return(
-              <h4 key={thing.id}>{thing.name} {thing.complete ? <span> : donezo</span> : <span></span>}</h4>
+              <Todo thing={thing} />
             )
           })}
           <button>Clear all finished tasks</button>
