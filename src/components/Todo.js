@@ -7,8 +7,8 @@ class Todo extends React.Component {
     }
     render() {
         return(
-            <div key={this.props.thing.id}>
-                <strong onClick={this.handleClick}>{this.props.thing.name}</strong>
+            <div>
+                <h3 onClick={this.handleClick}>~ {this.props.thing.name}</h3>
                 {this.props.thing.complete ? <span> : donezo</span> : <span></span>}
             </div>
           )

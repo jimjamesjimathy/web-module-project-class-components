@@ -11,11 +11,6 @@ class App extends React.Component {
     this.state = {
       thingsToDo: [
         {
-          name: 'Wash your head',
-          id: 420,
-          complete: false,
-        },
-        {
           name: 'Eat a lettuce',
           id: 19240,
           complete: false,
@@ -23,16 +18,11 @@ class App extends React.Component {
       ]
     }
   }
-
+                          // Handle adding new todo
   handleAdd = (name) => {
-    // 1. SetState
-    // 2. Change thingsToDo
-    // 3. Make a copy of thingsToDo
-    // 4. Add a new thingsToDo to the end of the thingsToDo object
-
     const newThing = {
       name: name,
-      id: 23521,
+      id: Math.floor(Math.random() * 9999999999999),
       complete: false
     }
     this.setState({
@@ -40,13 +30,8 @@ class App extends React.Component {
       thingsToDo: [...this.state.thingsToDo, newThing]
     });
   }
-
+                        // handle clearing all tasks that are completed 
   handleClear = () => {
-    // 1. Set State
-    // 2. Loop through all thingsToDo
-    // 3. Remove all completed thingsToDo
-    // 4. Save filtered thingsToDo
-
     this.setState({
       ...this.setState,
       thingsToDo: this.state.thingsToDo.filter(things => {
@@ -54,12 +39,8 @@ class App extends React.Component {
       })
     })
   }
-
+                      // handle toggling of the clicked task to make complete or not complete
   handleToggle = (clickedId) => {
-    // 1. SET STATE!!
-    // 2. Change thingsToDo
-    // 3. Find the ThingsToDo the was clicked on and changed value of complete
-    // 4. Keep all other thingsToDo the same.
     this.setState({
       ...this.state,
       thingsToDo: this.state.thingsToDo.map(things => {
@@ -73,8 +54,6 @@ class App extends React.Component {
       })
     })
   }
-
-
   render() {
     const { thingsToDo } = this.state;
     return (
