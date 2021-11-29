@@ -2,7 +2,6 @@ import React from 'react';
 import './components/Todo.css';
 import TodoForm from './components/TodoForm';
 import TodoList from './components/TodoList';
-import Todo from './components/Todo';
 
 
 class App extends React.Component {
@@ -37,7 +36,12 @@ class App extends React.Component {
           name: 'Create panic in a small town',
           id: 234234,
           complete: false,
-      }
+      }, 
+      {
+        name: 'EAT A CHICKEN',
+        id: 12251,
+        complete: false,
+      },
       ]
     }
   }
@@ -48,12 +52,9 @@ class App extends React.Component {
       <div className='App'>
         <div className='header'>
           <h1>Procrastinations Doom!</h1>
+          <TodoForm />
         </div>
-          {thingsToDo.map(thing => {
-            return(
-              <Todo thing={thing} />
-            )
-          })}
+          <TodoList thingsToDo={thingsToDo} />
           <button>Clear all finished tasks</button>
       </div>
     );

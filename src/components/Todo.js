@@ -4,9 +4,10 @@ import React from "react"
 class Todo extends React.Component {
     render() {
         return(
-            <h3 key={this.props.thing.id}>
-                {this.props.thing.name} {this.props.thing.complete ? <span> : donezo</span> : <span></span>}
-            </h3>
+            <div key={this.props.thing.id}>
+                <strong>{this.props.thing.name}</strong>
+                {this.props.thing.complete ? <span> : donezo</span> : <span></span>}
+            </div>
           )
     }
 }
